@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blog_app/LoginRegisterPage.dart';
-import 'LoginRegisterPage.dart';
+import 'package:flutter_blog_app/Authentication.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'Mapping.dart';
+import 'Authentication.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(new BlogApp());
 }
 
@@ -14,7 +18,9 @@ class BlogApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: LoginRegisterPage(),
+      home: MappingPage(
+        auth: Auth(),
+      ),
     );
   }
 }
