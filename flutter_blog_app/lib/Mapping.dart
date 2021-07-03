@@ -29,7 +29,8 @@ class _MappingPageState extends State<MappingPage> {
 
     widget.auth.getCurrentUser().then((firebaseUserId) {
       setState(() {
-        authStatus = firebaseUserId == null
+        var other = null;
+        authStatus = firebaseUserId == other
             ? AuthStatus.notSignedIn
             : AuthStatus.signedIn;
       });
