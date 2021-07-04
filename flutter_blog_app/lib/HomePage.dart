@@ -3,8 +3,8 @@ import 'Authentication.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
-    required this.auth,
-    required this.onSignedOut,
+    this.auth,
+    this.onSignedOut,
   });
 
   final AuthImplementation auth;

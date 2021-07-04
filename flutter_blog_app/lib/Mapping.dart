@@ -7,7 +7,7 @@ class MappingPage extends StatefulWidget {
   final AuthImplementation auth;
 
   MappingPage({
-    required this.auth,
+    this.auth,
   });
 
   State<StatefulWidget> createState() {

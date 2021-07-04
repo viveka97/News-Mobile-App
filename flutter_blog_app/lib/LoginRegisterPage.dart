@@ -3,8 +3,8 @@ import 'Authentication.dart';
 
 class LoginRegisterPage extends StatefulWidget {
   LoginRegisterPage({
-    required this.auth,
-    required this.onSignedIn,
+    this.auth,
+    this.onSignedIn,
   });
   final AuthImplementation auth;
   final VoidCallback onSignedIn;
@@ -27,7 +27,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
   bool validateAndSave() {
     final form = formKey.currentState;
 
-    if (form!.validate()) {
+    if (form.validate()) {
       form.save();
       return true;
     } else {
@@ -54,7 +54,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
   }
 
   void moveToRegister() {
-    formKey.currentState!.reset();
+    formKey.currentState.reset();
 
     setState(() {
       _formType = FormType.register;
@@ -62,7 +62,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
   }
 
   void moveToLogin() {
-    formKey.currentState!.reset();
+    formKey.currentState.reset();
 
     setState(() {
       _formType = FormType.login;
@@ -101,7 +101,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
       new TextFormField(
         decoration: new InputDecoration(labelText: 'Email'),
         validator: (value) {
-          return value!.isEmpty ? 'Email is required.' : null;
+          return value.isEmpty ? 'Email is required.' : null;
         },
         onSaved: (value) => _email,
       ),
@@ -112,7 +112,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
         decoration: new InputDecoration(labelText: 'Password'),
         obscureText: true,
         validator: (value) {
-          return value!.isEmpty ? 'Password is required.' : null;
+          return value.isEmpty ? 'Password is required.' : null;
         },
         onSaved: (value) => _password,
       ),
@@ -128,7 +128,7 @@ class _LoginRegisterPage extends State<LoginRegisterPage> {
       child: new CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 110.0,
-        child: Image.asset('images/Logo.png'),
+        // child: Image.asset('assets/Logo.png'),
       ),
     );
   }
